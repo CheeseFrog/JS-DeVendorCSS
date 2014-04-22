@@ -11,9 +11,9 @@
 function DeVendorCSS(n) {
   function Up(a) {return a.charAt(0).toUpperCase()+a.slice(1);}
   function Q(a) {if (a in document.body.style) return js=a;}
-  n=n.toLowerCase(); var m = n.split("-");
-  for (var i=0; i<m.length; i++) {var js=(js?js:"")+(m[1]?Up(m[i]):m);}
+  n=n.toLowerCase(); var js=n.split("-");
+  for (var i=1; i<js.length; i++) js[i]=Up(js[i]); js=(js+'').replace(',','');
   var v=['','webkit','moz','o','ms','khtml'], i=0;
-  if (!Q(js)) for (i=1; i<v.length; i++) {if (Q(Up(v[i])+Up(js)) || Q(v[i]+Up(js))) break;}
-  return ['',js,((i && i<v.length)?'-'+v[i]+'-':'')+n];
+  if (!Q(js)) for (i=1; i<v.length; i++) {if (Q(v[i]+Up(js)) || Q(Up(v[i])+Up(js))) break;}
+  return ['', js, ((i && i<v.length)?'-'+v[i]+'-':'')+n];
 }
