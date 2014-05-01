@@ -6,7 +6,7 @@
 
 // Example #2:
 //  var transform = DeVendorCSS('transform');
-//  eval('e.style.'+transform[1]+'="translateY(5px)"')
+//  e.style[transform[1]]="translateY(5px)";
 
 function DeVendorCSS(n) {
   function Up(a) {return a.charAt(0).toUpperCase()+a.slice(1);}
