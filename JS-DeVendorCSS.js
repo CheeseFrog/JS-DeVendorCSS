@@ -16,5 +16,5 @@ function DeVendorCSS(n) {
   js=(js+'').replace(/,/g,'');
   var v=['','webkit','moz','o','ms','khtml'], i=0;
   if (!Q(js)) for (i=1; i<v.length; i++) {if (Q(v[i]+Up(js)) || Q(Up(v[i])+Up(js))) break;}
-  return ['', js, ((i && i<v.length)?'-'+v[i]+'-':'')+n];
+  return [v[i], js, ((i && i<v.length)?'-'+v[i]+'-':'')+n];
 }
